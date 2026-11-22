@@ -1,0 +1,7 @@
+{
+  "name": "Blokbay crypto payments",
+  "version": "1.0.0",
+  "author": "Blokbay",
+  "link": "https://blokbay.com",
+  "description": "Accept BTC, USDC, USDT and ETH. Funds go straight to your own wallet: no custody, 1% of the paid price, no fixed costs."
+}
