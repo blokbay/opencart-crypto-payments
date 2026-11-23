@@ -5,5 +5,5 @@ $_['text_instruction'] = 'You will pay with your crypto wallet on the secure Blo
 $_['button_confirm'] = 'Pay with crypto';
 $_['error_order'] = 'The order could not be found. Please go back to the cart.';
 $_['error_payment_method'] = 'Please choose a payment method.';
-$_['error_currency'] = 'Crypto payments are available for orders in USD only.';
+$_['error_currency'] = 'Crypto payments are not available for orders in this currency.';
 $_['error_create'] = 'The crypto payment could not be created. Please try again.';

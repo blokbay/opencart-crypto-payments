@@ -5,5 +5,5 @@ $_['text_instruction'] = 'Pagherai con il tuo wallet crypto sulla pagina di paga
 $_['button_confirm'] = 'Paga in crypto';
 $_['error_order'] = 'Ordine non trovato. Torna al carrello.';
 $_['error_payment_method'] = 'Scegli un metodo di pagamento.';
-$_['error_currency'] = 'Il pagamento in crypto è disponibile solo per ordini in USD.';
+$_['error_currency'] = 'Il pagamento in crypto non è disponibile per ordini in questa valuta.';
 $_['error_create'] = 'Non è stato possibile creare il pagamento in crypto. Riprova.';

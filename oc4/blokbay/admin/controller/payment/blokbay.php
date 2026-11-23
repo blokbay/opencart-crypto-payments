@@ -38,6 +38,11 @@ class Blokbay extends \Opencart\System\Engine\Controller {
 
 		$data['webhook_url'] = HTTP_CATALOG . 'index.php?route=extension/blokbay/payment/blokbay.webhook';
 
+		// Store currency not accepted by Blokbay: notice on the settings page (the method stays hidden for those orders).
+		$accepted = array('USD', 'EUR', 'GBP', 'CHF', 'JPY', 'CAD', 'AUD', 'SGD', 'HKD', 'AED');
+		$store_currency = strtoupper((string)$this->config->get('config_currency'));
+		$data['currency_warning'] = in_array($store_currency, $accepted, true) ? '' : sprintf($this->language->get('text_currency'), $store_currency, implode(', ', $accepted));
+
 		foreach (['secret_key', 'webhook_secret', 'public_key', 'api_base', 'status', 'sort_order'] as $key) {
 			$data['payment_blokbay_' . $key] = (string)$this->config->get('payment_blokbay_' . $key);
 		}

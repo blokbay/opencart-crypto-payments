@@ -20,7 +20,7 @@ class Blokbay extends \Opencart\System\Engine\Model {
 
 		$currency = isset($this->session->data['currency']) ? (string)$this->session->data['currency'] : '';
 
-		if (!$this->config->get('payment_blokbay_secret_key') || $currency !== 'USD' || $this->cart->hasSubscription()) {
+		if (!$this->config->get('payment_blokbay_secret_key') || !in_array(strtoupper($currency), array('USD', 'EUR', 'GBP', 'CHF', 'JPY', 'CAD', 'AUD', 'SGD', 'HKD', 'AED'), true) || $this->cart->hasSubscription()) {
 			return [];
 		}
 
@@ -86,7 +86,8 @@ class Blokbay extends \Opencart\System\Engine\Model {
 		$status = isset($p['status']) ? (string)$p['status'] : '';
 
 		if ($status === 'paid') {
-			if ((string)$row['amount'] !== (isset($p['amount']) ? (string)$p['amount'] : '') || (isset($p['currency']) ? $p['currency'] : '') !== 'USD') {
+			// Amount and currency of the order: the amount was saved formatted in the order currency when the payment was created.
+			if ((string)$row['amount'] !== (isset($p['amount']) ? (string)$p['amount'] : '') || (isset($p['currency']) ? $p['currency'] : '') !== strtoupper((string)$order_info['currency_code'])) {
 				return 'amount mismatch';
 			}
 

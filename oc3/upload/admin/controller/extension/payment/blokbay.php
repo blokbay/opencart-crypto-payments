@@ -45,6 +45,11 @@ class ControllerExtensionPaymentBlokbay extends Controller {
 		$data['cancel'] = $this->url->link('marketplace/extension', $token . '&type=payment', true);
 		$data['webhook_url'] = HTTPS_CATALOG . 'index.php?route=extension/payment/blokbay/webhook';
 
+		// Store currency not accepted by Blokbay: notice on the settings page (the method stays hidden for those orders).
+		$accepted = array('USD', 'EUR', 'GBP', 'CHF', 'JPY', 'CAD', 'AUD', 'SGD', 'HKD', 'AED');
+		$store_currency = strtoupper((string)$this->config->get('config_currency'));
+		$data['currency_warning'] = in_array($store_currency, $accepted, true) ? '' : sprintf($this->language->get('text_currency'), $store_currency, implode(', ', $accepted));
+
 		$defaults = array('secret_key' => '', 'webhook_secret' => '', 'public_key' => '', 'api_base' => 'https://blokbay.com', 'pending_status_id' => 1, 'paid_status_id' => 2, 'expired_status_id' => 14, 'status' => 0, 'sort_order' => '');
 
 		foreach ($defaults as $key => $default) {

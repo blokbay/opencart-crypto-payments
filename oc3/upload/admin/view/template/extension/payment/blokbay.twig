@@ -20,6 +20,7 @@
     </div>
     {% endif %}
     <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ text_intro }}</div>
+    {% if currency_warning %}<div class="alert alert-warning" id="blokbay-currency-warning"><i class="fa fa-exclamation-triangle"></i> {{ currency_warning }}</div>{% endif %}
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>

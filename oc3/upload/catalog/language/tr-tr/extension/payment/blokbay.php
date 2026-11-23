@@ -5,5 +5,5 @@ $_['text_instruction'] = 'Güvenli Blokbay ödeme sayfasında kripto cüzdanın�
 $_['button_confirm'] = 'Kriptoyla öde';
 $_['error_order'] = 'Sipariş bulunamadı. Lütfen sepete geri dönün.';
 $_['error_payment_method'] = 'Lütfen bir ödeme yöntemi seçin.';
-$_['error_currency'] = 'Kripto ödeme yalnızca USD siparişler için kullanılabilir.';
+$_['error_currency'] = 'Kripto ödeme bu para birimindeki siparişler için kullanılamaz.';
 $_['error_create'] = 'Kripto ödeme oluşturulamadı. Lütfen tekrar deneyin.';

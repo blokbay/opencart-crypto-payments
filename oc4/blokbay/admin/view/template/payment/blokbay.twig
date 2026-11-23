@@ -15,6 +15,7 @@
   </div>
   <div class="container-fluid">
     <div class="alert alert-info"><i class="fa-solid fa-circle-info"></i> {{ text_intro }}</div>
+    {% if currency_warning %}<div class="alert alert-warning" id="blokbay-currency-warning"><i class="fa-solid fa-triangle-exclamation"></i> {{ currency_warning }}</div>{% endif %}
     <div class="card">
       <div class="card-header"><i class="fa-solid fa-pencil"></i> {{ text_edit }}</div>
       <div class="card-body">

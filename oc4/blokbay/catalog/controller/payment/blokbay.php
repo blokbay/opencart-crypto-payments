@@ -41,7 +41,9 @@ class Blokbay extends \Opencart\System\Engine\Controller {
 			$json['error'] = $this->language->get('error_payment_method');
 		}
 
-		if (!$json && $order_info['currency_code'] !== 'USD') {
+		$currency_code = isset($order_info['currency_code']) ? strtoupper((string)$order_info['currency_code']) : '';
+
+		if (!$json && !in_array($currency_code, array('USD', 'EUR', 'GBP', 'CHF', 'JPY', 'CAD', 'AUD', 'SGD', 'HKD', 'AED'), true)) {
 			$json['error'] = $this->language->get('error_currency');
 		}
 
@@ -52,19 +54,20 @@ class Blokbay extends \Opencart\System\Engine\Controller {
 
 			require_once DIR_EXTENSION . 'blokbay/system/library/blokbay_api.php';
 
-			$amount = \BlokbayApi::amount((float)$order_info['total'] * (float)$order_info['currency_value']);
+			// Order total in the order currency (the same value the customer sees), with the decimals of that currency.
+			$amount = \BlokbayApi::amount((float)$order_info['total'] * (float)$order_info['currency_value'], $currency_code);
 			$attempt = $this->model_extension_blokbay_payment_blokbay->countPayments($order_id);
 			$language = 'language=' . $this->config->get('config_language');
 
 			$res = $this->model_extension_blokbay_payment_blokbay->api()->createPayment([
 				'amount'         => $amount,
-				'currency'       => 'USD',
+				'currency'       => $currency_code,
 				'reference'      => (string)$order_id,
 				'description'    => 'Order ' . $order_id,
 				'customer_email' => (string)$order_info['email'],
 				'url_success'    => str_replace('&amp;', '&', $this->url->link('extension/blokbay/payment/blokbay.callback', $language . '&order_id=' . $order_id, true)),
 				'url_cancel'     => str_replace('&amp;', '&', $this->url->link('checkout/checkout', $language, true))
-			], $this->idempotencyKey($order_info, $amount, $attempt));
+			], $this->idempotencyKey($order_info, $amount, $attempt, $currency_code));
 
 			if (empty($res['id']) || empty($res['url']) || !is_string($res['id']) || !is_string($res['url'])) {
 				// Nothing is changed: the order stays unconfirmed and the cart stays as it is, the customer can try again.
@@ -161,9 +164,9 @@ class Blokbay extends \Opencart\System\Engine\Controller {
 	 * Same key for the same attempt (double click, network retry), never shared with another shop on the same Blokbay account
 	 * or with an older order that had the same number (store reinstalled): shop hash + order id + order date + amount + attempt.
 	 */
-	private function idempotencyKey(array $order_info, string $amount, int $attempt): string {
+	private function idempotencyKey(array $order_info, string $amount, int $attempt, string $currency = 'USD'): string {
 		$shop = substr(hash('sha256', (defined('HTTP_SERVER') ? HTTP_SERVER : '') . '|' . DB_DATABASE . '|' . DB_PREFIX), 0, 10);
 
-		return 'oc-' . $shop . '-' . (int)$order_info['order_id'] . '-' . (int)strtotime((string)$order_info['date_added']) . '-' . $amount . '-' . (int)$attempt;
+		return 'oc-' . $shop . '-' . (int)$order_info['order_id'] . '-' . (int)strtotime((string)$order_info['date_added']) . '-' . $amount . ($currency === 'USD' ? '' : '-' . $currency) . '-' . (int)$attempt;
 	}
 }
