@@ -1,10 +1,10 @@
 <?php
 // Blokbay crypto payments
-$_['heading_title'] = 'Pagamenti crypto Blokbay (BTC, USDC, USDT, ETH)';
+$_['heading_title'] = 'Pagamenti crypto Blokbay (USDT, USDC, ETH, BTC, SOL)';
 $_['text_extension'] = 'Estensioni';
 $_['text_success'] = 'Impostazioni di Blokbay salvate.';
 $_['text_edit'] = 'Modifica Blokbay';
-$_['text_intro'] = 'I clienti pagano in crypto sulla pagina di pagamento di Blokbay e i fondi vanno direttamente nel tuo wallet: nessuna custodia. L\'1% del prezzo pagato è trattenuto in automatico, nessun costo fisso. Valute degli ordini: USD, EUR, GBP, CHF, JPY, CAD, AUD, SGD, HKD, AED; il cliente paga in crypto al cambio del momento.';
+$_['text_intro'] = 'I clienti pagano in crypto sulla pagina di pagamento di Blokbay e i fondi vanno direttamente nel tuo wallet: nessuna custodia. L\'1% del prezzo pagato è trattenuto in automatico, nessun costo fisso. Valute degli ordini: USD, EUR, GBP, CHF, JPY, CAD, AUD, SGD, HKD, AED; il cliente paga in crypto al cambio del momento. Monete: USDT e USDC su Ethereum, BNB Smart Chain, Arbitrum, Polygon e Solana, USDC su Base, ETH su Ethereum, Base e Arbitrum, SOL su Solana, e Bitcoin; il cliente paga con il wallet collegato, oppure con indirizzo e QR code da qualsiasi wallet o exchange.';
 $_['entry_secret_key'] = 'Chiave API segreta';
 $_['entry_webhook_secret'] = 'Segreto di firma del webhook';
 $_['entry_public_key'] = 'Account (chiave pubblica)';

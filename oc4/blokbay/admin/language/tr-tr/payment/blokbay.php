@@ -1,10 +1,10 @@
 <?php
 // Blokbay crypto payments
-$_['heading_title'] = 'Blokbay kripto ödemeleri (BTC, USDC, USDT, ETH)';
+$_['heading_title'] = 'Blokbay kripto ödemeleri (USDT, USDC, ETH, BTC, SOL)';
 $_['text_extension'] = 'Eklentiler';
 $_['text_success'] = 'Blokbay ayarları kaydedildi.';
 $_['text_edit'] = 'Blokbay düzenle';
-$_['text_intro'] = 'Müşteriler Blokbay ödeme sayfasında kriptoyla öder ve tutar doğrudan kendi cüzdanınıza gider: emanet yok. Ödenen fiyatın %1\'i otomatik olarak kesilir, sabit maliyet yok. Sipariş para birimleri: USD, EUR, GBP, CHF, JPY, CAD, AUD, SGD, HKD, AED; müşteri güncel kurla kriptoyla öder.';
+$_['text_intro'] = 'Müşteriler Blokbay ödeme sayfasında kriptoyla öder ve tutar doğrudan kendi cüzdanınıza gider: emanet yok. Ödenen fiyatın %1\'i otomatik olarak kesilir, sabit maliyet yok. Sipariş para birimleri: USD, EUR, GBP, CHF, JPY, CAD, AUD, SGD, HKD, AED; müşteri güncel kurla kriptoyla öder. Coinler: Ethereum, BNB Smart Chain, Arbitrum, Polygon ve Solana üzerinde USDT ve USDC, Base üzerinde USDC, Ethereum, Base ve Arbitrum üzerinde ETH, Solana üzerinde SOL ve Bitcoin; müşteri bağlı cüzdanından ya da herhangi bir cüzdan veya borsadan adres ve QR kod ile öder.';
 $_['entry_secret_key'] = 'Gizli API anahtarı';
 $_['entry_webhook_secret'] = 'Webhook imza sırrı';
 $_['entry_public_key'] = 'Hesap (açık anahtar)';

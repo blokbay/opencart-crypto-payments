@@ -1,7 +1,7 @@
 <?php
 // Blokbay crypto payments
-$_['text_title'] = 'العملات المشفرة (BTC, USDC, USDT, ETH)';
-$_['text_instruction'] = 'ستدفع من محفظتك للعملات المشفرة في صفحة الدفع الآمنة لـ Blokbay، ثم تعود إلى هذا المتجر.';
+$_['text_title'] = 'العملات المشفرة (USDT, USDC, ETH, BTC, SOL)';
+$_['text_instruction'] = 'ادفع بالعملات المشفرة: USDT وUSDC وETH وBTC أو SOL، من محفظتك أو من منصة تداول. يتم الدفع في صفحة الدفع الآمنة لـ Blokbay، ثم تعود إلى هذا المتجر.';
 $_['button_confirm'] = 'ادفع بالعملات المشفرة';
 $_['error_order'] = 'تعذر العثور على الطلب. يرجى العودة إلى سلة التسوق.';
 $_['error_payment_method'] = 'يرجى اختيار طريقة الدفع.';

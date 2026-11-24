@@ -1,10 +1,10 @@
 <?php
 // Blokbay crypto payments
-$_['heading_title'] = 'مدفوعات Blokbay بالعملات المشفرة (BTC, USDC, USDT, ETH)';
+$_['heading_title'] = 'مدفوعات Blokbay بالعملات المشفرة (USDT, USDC, ETH, BTC, SOL)';
 $_['text_extension'] = 'الإضافات';
 $_['text_success'] = 'تم حفظ إعدادات Blokbay بنجاح.';
 $_['text_edit'] = 'تعديل Blokbay';
-$_['text_intro'] = 'يدفع العملاء بالعملات المشفرة في صفحة الدفع الخاصة بـ Blokbay وتصل الأموال مباشرة إلى محفظتك: بدون حفظ للأموال لدى طرف ثالث. يُقتطع 1% من السعر المدفوع تلقائيًا، بدون تكاليف ثابتة. عملات الطلبات: USD, EUR, GBP, CHF, JPY, CAD, AUD, SGD, HKD, AED؛ يدفع العميل بالعملات المشفرة بسعر الصرف الحالي.';
+$_['text_intro'] = 'يدفع العملاء بالعملات المشفرة في صفحة الدفع الخاصة بـ Blokbay وتصل الأموال مباشرة إلى محفظتك: بدون حفظ للأموال لدى طرف ثالث. يُقتطع 1% من السعر المدفوع تلقائيًا، بدون تكاليف ثابتة. عملات الطلبات: USD, EUR, GBP, CHF, JPY, CAD, AUD, SGD, HKD, AED؛ يدفع العميل بالعملات المشفرة بسعر الصرف الحالي. العملات: USDT وUSDC على شبكات Ethereum وBNB Smart Chain وArbitrum وPolygon وSolana، وUSDC على Base، وETH على Ethereum وBase وArbitrum، وSOL على Solana، وBitcoin؛ يدفع العميل من محفظة متصلة، أو عبر العنوان ورمز QR من أي محفظة أو منصة تداول.';
 $_['entry_secret_key'] = 'مفتاح API السري';
 $_['entry_webhook_secret'] = 'سر توقيع الويب هوك';
 $_['entry_public_key'] = 'الحساب (المفتاح العام)';
